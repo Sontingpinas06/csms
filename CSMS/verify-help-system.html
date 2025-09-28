@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help System Verification • CSMS</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    .verification-results {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .test-pass {
+      color: var(--success-color);
+      font-weight: bold;
+    }
+    .test-fail {
+      color: var(--error-color);
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    th {
+      background-color: var(--bg-secondary);
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <main class="main-content" style="margin-left: 0; padding-top: 2rem;">
+    <div class="section-header">
+      <h1>Help System Verification</h1>
+      <p>This page verifies that the help system is properly implemented across all pages.</p>
+    </div>
+
+    <div class="card">
+      <h3>Verification Tool</h3>
+      <p>Click the button below to verify the help system implementation:</p>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" onclick="verifyHelpSystem()">Verify Help System</button>
+      </div>
+      <div id="verificationResults" class="verification-results">
+        Click "Verify Help System" to check the implementation across all pages.
+      </div>
+    </div>
+    
+    <div class="card" style="margin-top: 1rem;">
+      <h3>Manual Testing</h3>
+      <p>You can also manually test the help system on each page:</p>
+      <ul style="margin-top: 0.5rem; margin-bottom: 1rem;">
+        <li>Click the Help button in the top-bar to open the help overlay</li>
+        <li>Check that the help content is specific to the current page</li>
+        <li>Use the global search (Ctrl+K) and type "help" to find help content</li>
+      </ul>
+      <div class="modules-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <a href="dashboard.html" class="btn" target="_blank">Dashboard</a>
+        <a href="curriculum-builder.html" class="btn" target="_blank">Curriculum Builder</a>
+        <a href="subject-mapping.html" class="btn" target="_blank">Subject Mapping</a>
+        <a href="electivesmanager.html" class="btn" target="_blank">Electives Manager</a>
+        <a href="academic-standards.html" class="btn" target="_blank">Academic Standards</a>
+        <a href="cde-pdap-validator.html" class="btn" target="_blank">CDE PDAP Validator</a>
+        <a href="grade-weighting.html" class="btn" target="_blank">Grade Weighting</a>
+        <a href="pre-requisite.html" class="btn" target="_blank">Pre-requisites</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/verify-help-system.js"></script>
+</body>
+</html>

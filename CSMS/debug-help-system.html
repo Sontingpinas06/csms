@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help System Debug • CSMS</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/enhancements.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    .debug-results {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .test-pass {
+      color: var(--success-color);
+    }
+    .test-fail {
+      color: var(--error-color);
+    }
+    .debug-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <!-- Top bar with help button for testing -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <h1>Help System Debug</h1>
+    </div>
+    <div class="top-bar-right">
+      <button class="help-trigger" type="button" aria-label="Open help" onclick="openHelp()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        Help
+      </button>
+    </div>
+  </div>
+
+  <main class="main-content" style="margin-left: 0; padding-top: 2rem;">
+    <div class="section-header">
+      <h1>Help System Debug</h1>
+      <p>This page helps debug the help system implementation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Debug Tools</h3>
+      <p>Use these tools to debug the help system:</p>
+      <div class="debug-actions">
+        <button class="btn btn-primary" onclick="document.getElementById('debugOutput').textContent = JSON.stringify(debugHelpSystem(), null, 2)">Run Debug</button>
+        <button class="btn" onclick="openHelp()">Test Help Button</button>
+        <button class="btn" onclick="openSearch()">Test Search</button>
+      </div>
+      <pre id="debugOutput" class="debug-results">Click "Run Debug" to check the help system.</pre>
+    </div>
+    
+    <div class="card" style="margin-top: 1rem;">
+      <h3>Manual Fixes</h3>
+      <p>If issues are found, here are common fixes:</p>
+      <ul>
+        <li>Make sure help-templates.js is included in all HTML files</li>
+        <li>Check that the help button is added to the top-bar-right section</li>
+        <li>Verify that the openHelp function is properly defined in script.js</li>
+        <li>Ensure search functionality includes help option</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Include necessary scripts -->
+  <script src="js/help-templates.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/debug-help-system.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject Mapping • CSMS</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/enhancements.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body class="theme-dark">
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <aside class="sidebar" role="complementary" aria-label="Sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-text">CSMS</span>
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar" aria-hidden="true">A</div>
+          <div class="user-info">
+            <span class="user-name">Alex Teacher</span>
+            <span class="user-role">Teacher</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" role="navigation" aria-label="Sidebar navigation">
+        <div class="nav-section">
+          <div class="nav-section-title">Core</div>
+          <ul>
+            <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-link" href="curriculum-builder.html">Curriculum Builder</a></li>
+            <li><a class="nav-link active" href="subject-mapping.html">Subject Mapping</a></li>
+            <li><a class="nav-link" href="pre-requisite.html">Pre-requisites</a></li>
+            <li><a class="nav-link" href="electivesmanager.html">Electives Manager</a></li>
+          </ul>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Records</div>
+          <ul>
+            <li><a class="nav-link" href="subject-offering-history.html">Offering History</a></li>
+            <li><a class="nav-link" href="subject-eq-tool.html">Equivalencies</a></li>
+            <li><a class="nav-link" href="grade-weighting.html">Grade Weighting</a></li>
+          </ul>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Compliance</div>
+          <ul>
+            <li><a class="nav-link" href="academic-standards.html">Academic Standards</a></li>
+            <li><a class="nav-link" href="cde-pdap-validator.html">CDE PDAP Validator</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="theme-toggle">
+          <button class="theme-btn" aria-label="Toggle theme" onclick="toggleTheme()">
+            <span class="theme-icon-light">🌞</span>
+            <span class="theme-icon-dark">🌙</span>
+          </button>
+        </div>
+        <button class="logout-btn" type="button" onclick="logout()">Logout</button>
+      </div>
+    </aside>
+
+    <main id="main" class="main-content" role="main">
+      <header class="top-bar" role="banner" aria-label="Top bar">
+        <div class="search-container">
+          <button class="search-trigger" type="button" aria-haspopup="dialog" aria-controls="searchOverlay">
+            <span>Search modules</span>
+            <kbd>Ctrl</kbd> + <kbd>K</kbd>
+          </button>
+        </div>
+        <div class="top-bar-right">
+          <button class="help-trigger" type="button" aria-label="Open help" onclick="openHelp()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Help
+          </button>
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" onclick="toggleSidebar()">☰ Menu</button>
+          <span class="user-name">Alex Teacher</span>
+        </div>
+      </header>
+
+      <section class="content-section active" aria-labelledby="sm-title">
+        <div class="section-header">
+          <h1 id="sm-title">Subject Mapping</h1>
+          <p class="text-muted">Align subjects to strands and standards</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 class="card-title">Strands</h3>
+            <p class="card-subtitle">Manage and assign strands</p>
+            <button class="btn btn-primary" onclick="showToast('Coming soon', 'info')">Manage</button>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Standards</h3>
+            <p class="card-subtitle">Configure academic standards</p>
+            <button class="btn btn-primary" onclick="showToast('Coming soon', 'info')">Configure</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Global search">
+        <div class="search-container">
+          <div class="search-header">
+            <input id="globalSearch" class="global-search-input" type="text" placeholder="Search modules…" />
+            <button class="search-close" type="button" aria-label="Close search">✕</button>
+          </div>
+          <div id="searchResults" class="search-results"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

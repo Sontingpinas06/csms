@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Weighting • CSMS</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="stylesheet" href="css/enhancements.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <aside class="sidebar" id="sidebar" aria-label="Primary">
+      <div class="sidebar-header">
+        <button class="sidebar-toggle" aria-label="Toggle sidebar" onclick="toggleSidebar()">☰</button>
+        <h1 class="app-title">CSMS</h1>
+      </div>
+
+      <div class="user-profile">
+        <img src="img/favicon.svg" alt="User avatar" class="avatar" />
+        <div>
+          <div class="name">Alex Educator</div>
+          <div class="role">Curriculum Admin</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section" aria-label="Dashboard">
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+        </div>
+
+        <div class="nav-section" aria-label="Curriculum">
+          <span class="nav-label">Curriculum</span>
+          <a class="nav-link" href="curriculum-builder.html">Curriculum Builder</a>
+          <a class="nav-link" href="pre-requisite.html">Pre-requisites</a>
+          <a class="nav-link active" href="grade-weighting.html">Grade Weighting</a>
+        </div>
+
+        <div class="nav-section" aria-label="Subjects">
+          <span class="nav-label">Subjects</span>
+          <a class="nav-link" href="subject-mapping.html">Subject Mapping</a>
+          <a class="nav-link" href="electivesmanager.html">Electives Manager</a>
+        </div>
+
+        <div class="nav-section" aria-label="Standards">
+          <span class="nav-label">Standards</span>
+          <a class="nav-link" href="academic-standards.html">Academic Standards</a>
+        </div>
+
+        <div class="nav-section" aria-label="Tools">
+          <span class="nav-label">Tools</span>
+          <a class="nav-link" href="curriculum-export.html">Curriculum Exporter</a>
+          <a class="nav-link" href="subject-eq-tool.html">Subject EQ Tool</a>
+          <a class="nav-link" href="cde-pdap-validator.html">CDE & PDAP Validator</a>
+          <a class="nav-link" href="subject-offering-history.html">Subject Offering History</a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌓</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="main">
+      <div class="top-bar">
+        <button class="search-trigger" aria-controls="searchOverlay">Search</button>
+        <div class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="dashboard.html">Home</a> / <span>Grade Weighting</span>
+        </div>
+        <div class="top-bar-right">
+          <button class="help-trigger" type="button" aria-label="Open help" onclick="openHelp()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Help
+          </button>
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" onclick="toggleSidebar()">☰ Menu</button>
+          <span class="user-name">Alex Teacher</span>
+        </div>
+      </div>
+
+      <section class="page-header">
+        <h2>Grade Weighting</h2>
+        <p>Configure grade weighting schemes across subjects and assessments.</p>
+        <div class="actions">
+          <button class="btn primary">New Scheme</button>
+          <button class="btn">Import</button>
+        </div>
+      </section>
+
+      <section class="module-grid">
+        <article class="module-card">
+          <h3>Schemes</h3>
+          <p>List of weighting schemes with applicability and status.</p>
+          <div class="card-actions">
+            <button class="btn">Manage Schemes</button>
+          </div>
+        </article>
+
+        <article class="module-card">
+          <h3>Assessment Types</h3>
+          <p>Define tests, projects, and other assessment weighting.</p>
+          <div class="card-actions">
+            <button class="btn">Edit Types</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="data-table">
+        <h3>Recent Updates</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scheme</th>
+              <th>Subject</th>
+              <th>Term</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>STEM Honors</td>
+              <td>Physics</td>
+              <td>Fall</td>
+              <td>2025-09-21</td>
+            </tr>
+            <tr>
+              <td>Arts Weighted</td>
+              <td>Visual Arts</td>
+              <td>Spring</td>
+              <td>2025-09-17</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <div id="searchOverlay" class="search-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="search-box">
+        <input id="globalSearch" type="search" placeholder="Search modules, pages, actions…" aria-label="Global search" />
+        <button class="close" aria-label="Close search">✕</button>
+      </div>
+      <div id="searchResults" class="results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+  </html>
